@@ -1,0 +1,34 @@
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container box">
+      <h1 class="jumbotron-heading text-white font-custum">Only one Album in the world</h1>
+      <p class="lead text-white font-custum">
+        Combine your travel memories and momentary memories into one book.
+        The memories will always remain with your heart. 
+        I will always keep those wonderful memories.
+      </p>
+      <p>
+        <%= link_to 'Create Album', new_picture_path, class: "btn btn-primary my-2 text-white" %>
+        <a href="#" class="btn btn-secondary my-2 text-white">Show Photos</a>
+      </p>
+    </div>
+  </section>
+  <div class="album bg-dark py-5 bg-light">
+    <div class="container">
+      <div class="row">
+      <% @pictures.each do |picture|%>
+        <%= render partial: "form", locals: { picture: picture } %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p>New to Bootstrap? <a href="{{ site.url }}/">Visit the homepage</a> or read our <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>

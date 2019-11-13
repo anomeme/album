@@ -1,0 +1,20 @@
+<div class="col-md-4">
+  <div class="card mb-4 shadow-sm">
+    <img src="<%= picture.image %>">
+    <div class="card-body">
+      <p class="card-text">
+        <%= picture.title %>
+      </p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <%= link_to "view", photos_path, class: "btn btn-sm btn-outline-secondary"%>
+          <%= link_to "Edit", edit_picture_path(picture), class: "btn btn-sm btn-outline-secondary"%>
+          <%= link_to "Delete", picture_path(picture), method: :delete, class: "btn btn-sm btn-outline-secondary"%>
+        </div>
+        <small class="text-muted">
+         <%= picture.created_at.strftime("%Y年%-m月%-d日") %>
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
