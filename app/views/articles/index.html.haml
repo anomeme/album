@@ -1,0 +1,61 @@
+.article_header
+  %ul
+    %li
+      = image_tag ("header1.png")
+    %li
+      = image_tag ("header2.png")
+    %li
+      = image_tag ("header3.png")
+.article_contents
+  .article_contents__recommended.container
+    .article_contents__recommended--title
+      %i.far.fa-star.fa-lg
+      %h3 おすすめ
+    %ul
+      %li
+        = link_to "おすすめ入ります", "", class:"popularity"
+      %li
+        = link_to "おすすめ入ります", "", class:"popularity"
+      %li
+        = link_to "おすすめ入ります", "", class:"popularity"
+      %li
+        = link_to "おすすめ入ります", "", class:"popularity"
+    = link_to "もっとみる", "", class:"article_contents__recommended--btn"
+  .article_contents__area.container
+    .article_contents__area--title
+      %i.fas.fa-map-marked-alt.fa-lg
+      %h3 エリアから探す
+    .article_contents__area__map
+      = image_tag ("japan_map.png"), class: "article_contents__area__map--japan"
+      = render "area-point"
+  .article_contents__list.container
+    .article_contents__list--title
+      %i.fab.fa-font-awesome-flag.fa-2x
+      %h3 新着記事
+    .article_contents__list__new
+.article_footer
+  .article_footer__contents.container
+.return_btn TOP
+
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js", :type => "text/javascript"}
+:javascript
+  $(function(){
+      var $setElm = $('.article_header'),
+      fadeSpeed = 1500,
+      switchDelay = 5000;
+   
+      $setElm.each(function(){
+          var targetObj = $(this);
+          var findUl = targetObj.find('ul');
+          var findLi = targetObj.find('li');
+          var findLiFirst = targetObj.find('li:first');
+   
+          findLi.css({display:'block',opacity:'0',zIndex:'99'});
+          findLiFirst.css({zIndex:'100'}).stop().animate({opacity:'1'},fadeSpeed);
+   
+          setInterval(function(){
+              findUl.find('li:first-child').animate({opacity:'0'},fadeSpeed).next('li').css({zIndex:'100'}).animate({opacity:'1'},fadeSpeed).end().appendTo(findUl).css({zIndex:'99'});
+          },switchDelay);
+      });
+  });
+
