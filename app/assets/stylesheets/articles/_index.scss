@@ -1,3 +1,5 @@
+
+
 .article_header{
   width: 100vw;
   height: 350px;
@@ -6,15 +8,41 @@
 .article_contents{
   width: 100vw;
   &__recommended{
-    height: 500px;
+    height: 470px;
     background-color: blanchedalmond;
+    ul{
+      margin-top: 30px;
+      width: 100%;
+      li{
+        display: inline-block;
+        .popularity{
+          display: block;
+          height: 250px;
+          width: 250px;
+          margin: 0 10px;
+          background: white;
+        }
+      }
+    }
+    &--btn{
+      display: block;
+      height: 50px;
+      width: 220px;
+      margin: 30px auto 0;
+      cursor: pointer;
+      text-align: center;
+      line-height: 50px;
+      background-color: gray;
+    }
   }
   &__area{
     height: 500px;
+    padding: 50px 150px;
     background-color: blue;
   }
   &__list{
     height: 500px;
+    padding: 50px 150px;
     background-color: green;
   }
 }
