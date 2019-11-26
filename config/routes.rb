@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pictures#index'
+  root 'article#index'
   resources :users, only: [:edit, :update]
+  resources :articles
   resources :pictures
   resources :photos
-  # resources :pictures do
-  #   resources :photos
-  #   namespace :api do
-  #     resources :photos, only: :index, defaults: { format: 'json' }
-  #   end
-  # end
 end

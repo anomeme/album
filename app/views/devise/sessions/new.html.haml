@@ -1,0 +1,19 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  %form.form-signin
+    %img.mb-4{:alt => "", :height => "72", :src => "{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg", :width => "72"}/
+    %h1.h3.mb-3.font-weight-normal Please sign in
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+    .field
+      = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "current-password", class: "form-control"
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me
+        = f.label :remember_me
+    .actions
+      = f.submit "Sign in", class: "btn btn-lg btn-primary btn-block"
+    = render "devise/shared/links"

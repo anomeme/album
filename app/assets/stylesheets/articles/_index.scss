@@ -1,0 +1,25 @@
+.article_header{
+  width: 100vw;
+  height: 350px;
+}
+
+.article_contents{
+  width: 100vw;
+  &__recommended{
+    height: 500px;
+    background-color: blanchedalmond;
+  }
+  &__area{
+    height: 500px;
+    background-color: blue;
+  }
+  &__list{
+    height: 500px;
+    background-color: green;
+  }
+}
+
+.article_footer{
+  width: 100vw;
+  height: 500px;
+}

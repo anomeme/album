@@ -1,0 +1,14 @@
+.body
+  .contents
+    = render "photo"
+    .image-box
+      .card.bottom{:style => "width: 20rem;"}
+        = form_for [@picture, @photo] do |f|
+          .photo-add
+            = f.label :photo do
+              = fa_icon 'photo', class: "fa fa-picture-o fa-3x fa-fw btn-outline-primary"
+              = f.file_field :photo, class: 'hidden'
+          .card-body.center
+            = f.submit 'Click to add photo.', class: 'btn btn-primary btn-sm'
+    .space
+      space-box
