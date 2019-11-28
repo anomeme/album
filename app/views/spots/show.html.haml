@@ -1,0 +1,10 @@
+%h1 Spots#show
+%p Find me in app/views/spots/show.html.haml
+- if @spots != nil
+  = @spot.name
+  .aaa
+    - @spots.each do |a|
+      .aaa
+        = link_to "#{a.name}", spot_path(a.id)
+- else 
+  = @spot.name

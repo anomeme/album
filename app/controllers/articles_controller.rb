@@ -1,9 +1,14 @@
 class ArticlesController < ApplicationController
   # before_action :authenticate_user!, except: :index
-  before_action :set_article, only:[:edit, :update, :destroy]
+  before_action :set_article, only:[:show, :edit, :update, :destroy]
   
   def index
-    @articles = Article.order("created_at DESC")
+    @articles = Article.page(params[:page]).per(9).order("created_at DESC")
+    @spots = Spot.all
+  end
+
+  def show
+    @relation_spots = Article.where(prefecture: @article.prefecture).where('id != ?', @article.id).order("created_at DESC")
   end
   
   def new
@@ -39,7 +44,12 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :detail, :image, :prefecture)
+    params.require(:article).permit(
+      :title,
+      :detail,
+      :image,
+      :spot_id
+    )
   end
 
   def set_article
