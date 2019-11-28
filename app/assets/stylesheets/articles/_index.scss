@@ -10,6 +10,7 @@
   height: 550px;
   text-align: left;
   overflow: hidden;
+  position: relative;
   ul{
     width: 100%;
     height: 550px;
@@ -24,10 +25,42 @@
       position: absolute;
     }
   }
+  .article_box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 550px;
+    width: 100%;
+    background-color: rgba($color: #fff, $alpha: 0.4);
+    z-index: 120;
+    h1{
+      text-align: center;
+      font-size: 55px;
+      margin-top: 200px;
+      font-weight: bold;
+      color:  rgb(77, 77, 77);
+    }
+    h3{
+      width: 500px;
+      display: block;
+      margin: 10px 0 0 60%;
+      font-weight: bold;
+      color:  rgb(77, 77, 77);
+    }
+    h2{
+      text-align: center;
+      margin-top: 30px;
+      font-size: 35px;
+      font-weight: bold;
+      color:  rgb(77, 77, 77);
+    }
+  }
 }
 
 .article_contents{
   width: 100vw;
+  font-family: 'Allura', cursive;
+  font-family: 'Nanum Brush Script', cursive;
   &__recommended{
     height: 470px;
     padding-top: 50px;
@@ -62,7 +95,7 @@
       font-weight: bold;
       padding: 12px 24px;
       border-radius: 4px;
-      background-image: linear-gradient(-90deg, #FF006E, #FFD500);
+      background-image: linear-gradient(-90deg, #709dff, #91fdb7);
       transition: .5s;
       background-size: 200%;
       margin: 30px auto 0;
@@ -93,7 +126,6 @@
     
   }
   &__list{
-    height: 500px;
     padding: 50px;
     &--title{
       display: flex;
@@ -102,14 +134,13 @@
         margin-right: 10px;
       }
     }
-  }
-}
-
-.article_footer{
-  height: 100px;
-  width: 100vw;
-  &__contents{
-    border-top: 0.5px solid rgb(130, 130, 130);
+    &__new{
+      margin-top: 30px;
+      .card{
+        padding: 5px;
+        box-sizing: border-box;
+      }
+    }
   }
 }
 
@@ -129,11 +160,21 @@
   overflow: hidden;
   background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
   transition: .4s;
-  z-index: 100;
+  z-index: 150;
   font-family: 'Maven Pro', sans-serif;
+  cursor: pointer;
+  box-shadow: inset 0px 3px 0 rgba(255,255,255,0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
+  border-bottom: solid 3px #549fa9;
 }
 .return_btn:hover {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
+}
+
+.return_btn:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
+  border-bottom: none;
 }
 
