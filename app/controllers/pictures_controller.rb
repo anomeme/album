@@ -19,17 +19,6 @@ class PicturesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @picture.update(picture_params)
-      redirect_to picture_photos_path(@picture), notice: 'グループを編集しました。'
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @picture.destroy
     redirect_to root_path, notice: "削除完了"

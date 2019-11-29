@@ -6,7 +6,7 @@
           .new-article__content__top__form--title
             = f.text_field :title, class: "choosing", placeholder: "例）渋谷で見つけた、料理の美味しいカフェ", value: ""
           .new-article__content__top__form--prefecture
-            = f.collection_select :prefecture, Prefecture.all, :name, :name, {}, class: "choosing"
+            = f.collection_select :spot_id, Prefecture.all, :id, :name, {}, class: "choosing"
         .new-article__content__top--image
           = f.file_field :image
       .new-article__content__bottom

@@ -206,25 +206,30 @@
           display: block;
           height: 250px;
           width: 300px;
-          background-color: chartreuse;
           cursor: pointer;
         }
         &--image{
           height: 200px;
           width: 300px;
+          object-fit: cover;
           position: absolute;
           top:0;
           left: 0;
           pointer-events: none;
         }
         &--title{
+          padding: 0 10px;
           width: 300px;
           background-color: #fff;
           line-height: 50px;
           position: absolute;
           top:200px;
           left: 0;
+          font-size: 15px;
           pointer-events: none;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }

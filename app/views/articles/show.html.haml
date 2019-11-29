@@ -4,7 +4,7 @@
       .article-show__left__heading--title
         %p.title #{@article.title}
       .article-show__left__heading--prefecture
-        %p.prefecture #{@article.prefecture}
+        %p.prefecture #{@article.spot.name}
     .article-show__left--image
       = image_tag (@article.image.url), class: "article-show__left--image--style"
     .article-show__left__detail
@@ -21,6 +21,8 @@
         .article-show__left__albums__box--album 4
         .article-show__left__albums__box--album 5
         .article-show__left__albums__box--album もっと見る
+    = link_to "このスポットに写真投稿", new_picture_path
+    = link_to "もっとみる", ""
   .article-show__right
     .article-show__right--relationtitle 関連エリア
     .article-show__right__relation
@@ -29,10 +31,10 @@
           = link_to "全国", root_path(anchor: 'link-btn'), class: "article-show__right__relation--menu--link"
           %i.fas.fa-chevron-right.article-show__right__relation--menu--icon
         %li.article-show__right__relation--menu
-          = link_to "関東", "#", class: "article-show__right__relation--menu--link"
+          = link_to "#{@parent_spot.name}", spot_path(@parent_spot.id), class: "article-show__right__relation--menu--link"
           %i.fas.fa-chevron-right.article-show__right__relation--menu--icon
         %li.article-show__right__relation--menu
-          = link_to "東京", "#", class: "article-show__right__relation--menu--link"
+          = link_to "#{@article.spot.name}", spot_path(@article.spot.id), class: "article-show__right__relation--menu--link"
           %i.fas.fa-chevron-right.article-show__right__relation--menu--icon
     .article-show__right__area このエリアの別の場所
     .article-show__right__box
