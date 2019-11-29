@@ -3,12 +3,13 @@ class ArticlesController < ApplicationController
   before_action :set_article, only:[:show, :edit, :update, :destroy]
   
   def index
-    @articles = Article.page(params[:page]).per(9).order("created_at DESC")
+    @articles = Article.includes(:spot).page(params[:page]).per(9).order("created_at DESC")
     @spots = Spot.all
   end
 
   def show
     @relation_spots = Article.where(prefecture: @article.prefecture).where('id != ?', @article.id).order("created_at DESC")
+    @parent_spot = Spot.find(@article.spot.parent_id)
   end
   
   def new

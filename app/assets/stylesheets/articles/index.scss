@@ -5,6 +5,23 @@
   transition: 0.3s ease-in-out;
 }
 
+@mixin osusume{
+  display: block;
+  height: 250px;
+  width: 250px;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 30px;
+  padding: 5px 0 0 10px;
+  object-fit: cover;
+  text-shadow:
+    1px 1px #aaa,
+    2px 2px #999,
+    3px 3px #888,
+    4px 4px #777,
+    5px 5px #666,
+}
+
 .article_header{
   width: 100vw;
   height: 550px;
@@ -76,14 +93,39 @@
       width: 100%;
       li{
         display: inline-block;
-        .popularity{
-          display: block;
-          height: 250px;
-          width: 250px;
-          margin: 0 10px;
-          background: white;
+        .popularity1{
+          @include osusume;
+          background-image: url("/images/tokyo.jpg");
+        }
+        .popularity1:hover{
+          text-decoration: none;
+        }
+        .popularity2{
+          @include osusume;
+          background-image: url("/images/yokohama.jpg");
+        }
+        .popularity2:hover{
+          text-decoration: none;
+        }
+        .popularity3{
+          @include osusume;
+          background-image: url("/images/hokkaido.jpg");
+        }
+        .popularity3:hover{
+          text-decoration: none;
+        }
+        .popularity4{
+          @include osusume;
+          background-image: url("/images/yamanashi.jpg");
+        }
+        .popularity4:hover{
+          text-decoration: none;
         }
       }
+    }
+    #link-btn{
+      height: 20px;
+      width: 100%;
     }
     &--btn {
       display: block;
@@ -100,14 +142,13 @@
       background-size: 200%;
       margin: 30px auto 0;
     }
-    
     &--btn:hover {
       background-position: right center;
       text-decoration: none;
     }
   }
   &__area{
-    padding: 50px;
+    padding: 0 50px 50px;
     &--title{
       display: flex;
       margin-left: 50px;
@@ -139,6 +180,13 @@
       .card{
         padding: 5px;
         box-sizing: border-box;
+        height: 420px;
+        .card-text{
+          height: 25px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
     }
   }
@@ -177,4 +225,3 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
   border-bottom: none;
 }
-

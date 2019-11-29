@@ -14,6 +14,15 @@
  *= require_self
  */
 
+@import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap"; 
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+
+*{
+  font-family: 'Kosugi Maru', sans-serif;
+}
 .clearfix::after {
   content: "";
   display: block;
@@ -83,17 +92,4 @@ header{
     }
   }
 }
-
-@import "reset";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "bootstrap"; 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
-@import "users";
-@import "articles/index";
-@import "articles/area-point";
-@import "articles/new";
-@import "articles/show";
-@import "pictures";
-@import "photos";
 

@@ -17,14 +17,14 @@
       %h3 おすすめ
     %ul
       %li
-        = link_to "おすすめ入ります", "", class:"popularity"
+        = link_to "東京都", spot_path(id:13), class:"popularity1"
       %li
-        = link_to "おすすめ入ります", "", class:"popularity"
+        = link_to "神奈川県", spot_path(id:14), class:"popularity2"
       %li
-        = link_to "おすすめ入ります", "", class:"popularity"
+        = link_to "北海道", spot_path(id:1), class:"popularity3"
       %li
-        = link_to "おすすめ入ります", "", class:"popularity"
-    = link_to "もっとみる", "", class:"article_contents__recommended--btn", id: "link-btn"
+        = link_to "山梨県", spot_path(id:19), class:"popularity4"
+    #link-btn
   .article_contents__area.container
     .article_contents__area--title
       %i.fas.fa-map-marked-alt.fa-lg
