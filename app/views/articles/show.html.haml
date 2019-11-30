@@ -15,13 +15,15 @@
     .article-show__left__albums
       %span.album-title> 投稿写真
       .article-show__left__albums__box
-        .article-show__left__albums__box--album 1
-        .article-show__left__albums__box--album 2
-        .article-show__left__albums__box--album 3
-        .article-show__left__albums__box--album 4
-        .article-show__left__albums__box--album 5
-        .article-show__left__albums__box--album もっと見る
-    = link_to "このスポットに写真投稿", new_picture_path
+        - @article.pictures.each do |picture|
+          .article-show__left__albums__box--album
+            = image_tag (picture.image.url)
+        -# .article-show__left__albums__box--album 2
+        -# .article-show__left__albums__box--album 3
+        -# .article-show__left__albums__box--album 4
+        -# .article-show__left__albums__box--album 5
+        -# .article-show__left__albums__box--album もっと見る
+    = link_to "このスポットに写真投稿", new_picture_path(@article)
     = link_to "もっとみる", ""
   .article-show__right
     .article-show__right--relationtitle 関連エリア
