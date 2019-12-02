@@ -95,28 +95,28 @@
         display: inline-block;
         .popularity1{
           @include osusume;
-          background-image: image-url("/images/tokyo.jpg");
+          background-image: image-url("tokyo.jpg");
         }
         .popularity1:hover{
           text-decoration: none;
         }
         .popularity2{
           @include osusume;
-          background-image: image-url("/images/yokohama.jpg");
+          background-image: image-url("yokohama.jpg");
         }
         .popularity2:hover{
           text-decoration: none;
         }
         .popularity3{
           @include osusume;
-          background-image: image-url("/images/hokkaido.jpg");
+          background-image: image-url("hokkaido.jpg");
         }
         .popularity3:hover{
           text-decoration: none;
         }
         .popularity4{
           @include osusume;
-          background-image: image-url("/images/yamanashi.jpg");
+          background-image: image-url("yamanashi.jpg");
         }
         .popularity4:hover{
           text-decoration: none;
