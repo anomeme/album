@@ -1,11 +1,11 @@
 .article_header
   %ul
     %li
-      = image_tag asset_path('header1.png')
+      = image_tag ('header1.png')
     %li
-      = image_tag asset_path('header2.png')
+      = image_tag ('header2.png')
     %li
-      = image_tag asset_path('header3.png')
+      = image_tag ('header3.png')
   .article_box
     %h1 旅の過程にこそ価値がある
     %h3 - Steve Jobs -
@@ -30,7 +30,7 @@
       %i.fas.fa-map-marked-alt.fa-lg
       %h3 エリアから探す
     .article_contents__area__map
-      = image_tag asset_path('japan_map.png'), class: "article_contents__area__map--japan"
+      = image_tag ('japan_map.png'), class: "article_contents__area__map--japan"
       = render partial: "area-point", locals: {spots:  @spots}
   .article_contents__list.container
     .article_contents__list--title
