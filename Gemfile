@@ -68,7 +68,6 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'active_hash'
 gem "gretel"
-gem 'uglifier', '>= 1.3.0'
 
 group :production do
   gem 'unicorn', '5.4.1'
